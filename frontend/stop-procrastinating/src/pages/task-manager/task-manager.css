@@ -1,0 +1,32 @@
+.title {
+  text-align: center;
+  font-size: 24px;
+  color: #fff;
+  padding-top: 50px;
+}
+
+.page {
+  background-color: #F2F1E6;
+  cursor: move;
+  height: 100vh;
+}
+
+.todo-list{
+  background-color:#FFF1E6;
+  margin-top: 5%;
+  display: flex;
+  align-content: space-between;
+  flex-direction: column;
+  border: 5px solid;
+  position: absolute;
+  padding: 10px;
+  flex-wrap: wrap;
+  border-radius: 6px;
+  row-gap: 10px;
+  border-color: #474B53;
+}
+
+.container{
+  display: flex;
+  justify-content: center;
+}

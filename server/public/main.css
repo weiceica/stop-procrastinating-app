@@ -1,0 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400|Inconsolata:400');
+@import '../node_modules/tailwindcss/base';
+@import '../node_modules/tailwindcss/components';
+@import '../node_modules/tailwindcss/utilities';
