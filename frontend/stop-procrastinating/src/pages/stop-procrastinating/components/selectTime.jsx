@@ -5,7 +5,9 @@ import Alert from 'react-bootstrap/Alert';
 import axios from 'axios';
 
 const SelectTime = ({task, onSetTime}) => {
-    const min_1 = 10000;
+    const secs_1 = 1000;
+    const secs_10 = 10000;
+    const min_1 = 60000;
     const min_5 = 300000;
     const min_10 = 6000000;
 
@@ -28,9 +30,11 @@ const SelectTime = ({task, onSetTime}) => {
   return (
     <>
     <ButtonGroup aria-label="Basic example">
-      <Button variant={selected === min_1 ? 'primary' : 'secondary'} onClick={() => handleSetTime(min_1, task)}>10 seconds</Button>
-      <Button variant={selected === min_5 ? 'primary' : 'secondary'} onClick={() => handleSetTime(min_5, task)}>5 min</Button>
-      <Button variant={selected === min_10 ? 'primary' : 'secondary'} onClick={() => handleSetTime(min_10, task)}>10 min</Button>
+      <Button variant={selected === secs_1 ? 'danger' : 'secondary'} onClick={() => handleSetTime(secs_10, task)}>1 sec</Button>
+      <Button variant={selected === secs_10 ? 'danger' : 'secondary'} onClick={() => handleSetTime(secs_10, task)}>10 sec</Button>
+      <Button variant={selected === min_1 ? 'danger' : 'secondary'} onClick={() => handleSetTime(min_1, task)}>1 min</Button>
+      <Button variant={selected === min_5 ? 'danger' : 'secondary'} onClick={() => handleSetTime(min_5, task)}>5 min</Button>
+      <Button variant={selected === min_10 ? 'danger' : 'secondary'} onClick={() => handleSetTime(min_10, task)}>10 min</Button>
     </ButtonGroup>
     {showAlert && (
         <Alert variant="danger" onClick={() => setShowAlert(false) } dismissible>

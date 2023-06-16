@@ -5,12 +5,13 @@ import Navbar from 'react-bootstrap/Navbar';
 import SelectTime from './components/selectTime';
 import SelectTask from './components/selectTask';
 import Button from 'react-bootstrap/Button';
+
 // import Yeller from './components/Yeller';
 
 function StopProcrastinating() {
   const [time, setTime] = useState(10000);
   const [task, setTask] = useState(null);
-  
+  const [timer, setTimer] = useState(null);
 
   const handleSetTask = (t) => {
     setTask(t);
@@ -19,12 +20,12 @@ function StopProcrastinating() {
 
   const handleSetTime = (t) => {
     setTime(t);
+    clearInterval(timer);
     console.log("I have set the time");
   };
 
   const handleStartTimer = (t) => {
-    console.log(t);
-    setInterval(console.log("start"), t);
+    setTimer(setInterval(function(){console.log("Yeller")}, t));
   }
 
 
