@@ -12,7 +12,6 @@ const SelectTime = ({task, onSetTime}) => {
     const min_10 = 6000000;
 
     const [selected, setSelected] = useState(min_1);
-
     const [showAlert, setShowAlert] = useState(false);
 
 
@@ -30,7 +29,7 @@ const SelectTime = ({task, onSetTime}) => {
   return (
     <>
     <ButtonGroup aria-label="Basic example">
-      <Button variant={selected === secs_1 ? 'danger' : 'secondary'} onClick={() => handleSetTime(secs_10, task)}>1 sec</Button>
+      <Button variant={selected === secs_1 ? 'danger' : 'secondary'} onClick={() => handleSetTime(secs_1, task)}>1 sec</Button>
       <Button variant={selected === secs_10 ? 'danger' : 'secondary'} onClick={() => handleSetTime(secs_10, task)}>10 sec</Button>
       <Button variant={selected === min_1 ? 'danger' : 'secondary'} onClick={() => handleSetTime(min_1, task)}>1 min</Button>
       <Button variant={selected === min_5 ? 'danger' : 'secondary'} onClick={() => handleSetTime(min_5, task)}>5 min</Button>

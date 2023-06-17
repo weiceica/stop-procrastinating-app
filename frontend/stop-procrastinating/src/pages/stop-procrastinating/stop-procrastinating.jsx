@@ -1,17 +1,16 @@
 import React, { useState } from 'react';
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
 import SelectTime from './components/selectTime';
 import SelectTask from './components/selectTask';
 import Button from 'react-bootstrap/Button';
 import './stop-procrastinating.css';
 import NavigationBar from '../../containers/Navigationbar';
-// import Yeller from './components/Yeller';
+import Yeller from './components/Yeller';
 
 function StopProcrastinating() {
   const [time, setTime] = useState(10000);
   const [task, setTask] = useState(null);
+  const [timer, setTimer] = useState(null);
+  const [status, setStatus] = useState(false);
   
 
   const handleSetTask = (t) => {
@@ -21,17 +20,27 @@ function StopProcrastinating() {
 
   const handleSetTime = (t) => {
     setTime(t);
+    clearInterval(timer);
+    setStatus(false);
     console.log("I have set the time");
   };
 
-  const handleStartTimer = (t) => {
-    console.log(t);
-    setInterval(console.log("start"), t);
+  const handleYeller = () => {
+    setStatus(true);
+    
   }
 
+  const exitYeller = () => {
+    setStatus(false);
+  }
 
+  const handleStartTimer = (t) => {
+    console.log(t);
+    setTimer(setInterval(handleYeller, t));
+  }
 
   return (
+    <>{status === true ? <Yeller task={task} exitYeller={exitYeller}/> : 
     <div className='sp-body'>
       <NavigationBar/>
       <div className='sp-page'>
@@ -43,6 +52,8 @@ function StopProcrastinating() {
         </div>
       </div>
     </div>
+    }
+    </>
   );
 }
 
