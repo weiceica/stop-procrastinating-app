@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import AddTodo from './components/AddTodo';
 import TodoList from './components/TodoList';
-import EditTodo from './components/EditTodo';
 import QueryTodo from './components/QueryTodo';
 import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
 import axios from 'axios';
-import styles from './task-manager.css'
+import './task-manager.css'
+import NavigationBar from '../../containers/Navigationbar';
+
 
 
 function TaskManager() {
@@ -118,19 +117,7 @@ function TaskManager() {
 
   return (
     <div className='page'>
-      <Navbar fixed="sticky" bg="dark" variant="dark">
-        <Container>
-          <Navbar.Brand href="/">Stop Procrastinating</Navbar.Brand>
-          <Nav className="me-auto">
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/task-manager">Task Manager</Nav.Link>
-            <Nav.Link href="/stop-procrastinating">Stop Procrastinating</Nav.Link>
-          </Nav>
-        </Container>
-      </Navbar>
-      {selectedTodo ? (
-        <EditTodo todo={selectedTodo} onUpdateTodo={handleUpdateTodo} onCancel={() => setSelectedTodo(null)} />
-      ) : (
+      <NavigationBar/>
         <div className='container'>
         <div className='todo-list'>
           <AddTodo onAddTodo={handleAddTodo} />
@@ -144,10 +131,12 @@ function TaskManager() {
             showArchive={false}
             buttonArchive={true}
             queryMode={query}
+            todo={selectedTodo} 
+            onUpdateTodo={handleUpdateTodo} 
+            onCancel={() => setSelectedTodo(null)}
           />
         </div>
         </div>
-      )}
     </div>
   );
 }

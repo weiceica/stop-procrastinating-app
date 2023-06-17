@@ -43,7 +43,7 @@ function selectQuery(queryMode, todos) {
   return viewTodos;
 }
 
-function TodoList({ todos, onToggleComplete, onEditTodo, onDeleteTodo, onToggleArchive, showArchive, buttonArchive, queryMode }) {
+function TodoList({ todos, onToggleComplete, onEditTodo, onDeleteTodo, onToggleArchive, showArchive, buttonArchive, queryMode, onUpdateTodo, onCancel }) {
   const [viewTodos, setViewTodos] = useState(todos);
 
   const handleDrop = (droppedItem) => {
@@ -85,7 +85,6 @@ function TodoList({ todos, onToggleComplete, onEditTodo, onDeleteTodo, onToggleA
             {...provided.dragHandleProps}
             {...provided.draggableProps}>
         <TodoItem
-               
           key={todo._id}
           todo={todo}
           onToggleComplete={onToggleComplete}
@@ -93,10 +92,11 @@ function TodoList({ todos, onToggleComplete, onEditTodo, onDeleteTodo, onToggleA
           onDeleteTodo={onDeleteTodo}
           onToggleArchive={onToggleArchive}
           buttonArchive={buttonArchive}
+          onUpdateTodo={onUpdateTodo}
+          onCancel={onCancel}
         />
         </div>
     )}
-        
         </Draggable>
       ))}
     </ListGroup>

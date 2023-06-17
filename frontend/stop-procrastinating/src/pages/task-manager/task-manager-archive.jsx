@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import TodoList from './components/TodoList';
-import EditTodo from './components/EditTodo';
 import QueryTodo from './components/QueryTodo';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import axios from 'axios';
-import styles from './task-manager.module.css'
+import './task-manager.css'
 
 function TaskManagerArchive() {
   const [todos, setTodos] = useState([]);

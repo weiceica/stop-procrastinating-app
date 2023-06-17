@@ -1,0 +1,26 @@
+.sp-body{
+    background-color: #F2F1E6;
+    height: 100vh;
+}
+
+.sp-page{
+    display: flex;
+    justify-content: center;
+}
+
+.cont{
+    background-color:#FFF1E6;
+    margin-top: 5%;
+    display: flex;
+    min-width: 50%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border: 5px solid;
+    position: absolute;
+    padding: 10px;
+    flex-wrap: wrap;
+    border-radius: 6px;
+    row-gap: 10px;
+    border-color: #474B53;
+}
