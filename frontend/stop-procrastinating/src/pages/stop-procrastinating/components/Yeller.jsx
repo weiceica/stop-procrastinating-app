@@ -6,16 +6,17 @@ import flames from './pictures/flame.gif';
 import { Button } from 'react-bootstrap';
 import dean from './pictures/dean.webp'
 
-const Yeller = (task, exitYeller) => {
+const Yeller = ({task, exitYeller}) => {
     var audio = new Audio(sound);
     audio.play();
     const handleYeller = () => {
-        exitYeller;
+        exitYeller();
+        console.log('success');
     };
   return (
     <div className='yeller-page'>
     <div className='cnt'>
-        <h1>{task.name}</h1>
+        {task !== null ? <h1>{task.name}</h1> : <></>}
         <div className='yeller'>STOP PROCRASTINATING</div> 
     </div>
     <img style={{height:'250px'}} src={dean} alt='flaminyong'/>

@@ -32,6 +32,7 @@ function StopProcrastinating() {
 
   const exitYeller = () => {
     setStatus(false);
+    clearInterval(timer);
   }
 
   const handleStartTimer = (t) => {
