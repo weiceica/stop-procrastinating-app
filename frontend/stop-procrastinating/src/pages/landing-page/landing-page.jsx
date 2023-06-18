@@ -1,7 +1,6 @@
 import React from 'react';
 import NavigationBar from '../../containers/Navigationbar';
 import './landing-page.css';
-import { Button } from 'react-bootstrap';
 
 const LandingPage = ({ section1Text, section2Text, link1, link2 }) => {
 

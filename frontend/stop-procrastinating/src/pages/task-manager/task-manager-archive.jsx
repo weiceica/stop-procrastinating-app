@@ -6,6 +6,7 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import axios from 'axios';
 import './task-manager.css'
+import NavigationBar from '../../containers/Navigationbar';
 
 function TaskManagerArchive() {
   const [todos, setTodos] = useState([]);
@@ -103,21 +104,10 @@ function TaskManagerArchive() {
   };
 
   return (
-    <div className={styles.page}>
-      <Navbar fixed="sticky" bg="dark" variant="dark">
-        <Container>
-          <Navbar.Brand href="/">Stop Procrastinating</Navbar.Brand>
-          <Nav className="me-auto">
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/task-manager">Task Manager</Nav.Link>
-            <Nav.Link href="/stop-procrastinating">Stop Procrastinating</Nav.Link>
-          </Nav>
-        </Container>
-      </Navbar>
-      {selectedTodo ? (
-        <EditTodo todo={selectedTodo} onUpdateTodo={handleUpdateTodo} onCancel={() => setSelectedTodo(null)} />
-      ) : (
-        <div>
+    <div className='page'>
+      <NavigationBar/>
+      <div className='container'>
+        <div className='todo-list'>
           <QueryTodo/>
           <TodoList
             todos={todos}
@@ -129,7 +119,7 @@ function TaskManagerArchive() {
             buttonArchive={false}
           />
         </div>
-      )}
+        </div>
     </div>
   );
 }
