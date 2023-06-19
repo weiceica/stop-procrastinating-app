@@ -33,7 +33,7 @@ const Login = () => {
   };
 
   return (
-    <div className="container mt-4">
+    <div className="flex flex-col mt-4 ">
       <h1>Login</h1>
       <Form onSubmit={handleSubmit}>
         <Form.Group controlId="formBasicUsername">
@@ -62,6 +62,9 @@ const Login = () => {
           Sign Out
         </Button>
       </Form>
+      <h1>Sample Account: </h1>
+      <h2>Username: Sample </h2>
+      <h2>Password: sample123 </h2>
     </div>
   );
 };
