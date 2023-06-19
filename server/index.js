@@ -4,6 +4,8 @@ const app = express();
 const tasks = require('./routes/tasks'); // import from routes
 const connectDB = require('./db/connect');
 const cors = require('cors');
+const authRoutes = require('./routes/authRoutes');
+const protectedRoutes = require('./routes/protectedRoutes');
 require('dotenv').config();
 
 // middleware
@@ -13,6 +15,9 @@ app.use(express.static('./public'))
 app.use(express.json());
 
 app.use('/api/v1/tasks', tasks);
+
+app.use('/auth', authRoutes);
+app.use('/protected', protectedRoutes);
 
 // Our REST API
 /*

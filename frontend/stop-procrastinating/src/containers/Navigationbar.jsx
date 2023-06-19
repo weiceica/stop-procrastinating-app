@@ -12,7 +12,7 @@ const NavigationBar = () => {
           <Container className="d-flex px-1">
             <Navbar.Brand href="/">Stop Procrastinating</Navbar.Brand>
             <Nav className="mr-auto">
-              <Nav.Link href="/">Home</Nav.Link>
+              <Nav.Link href="/home">Home</Nav.Link>
               <Nav.Link href="/task-manager">Task Manager</Nav.Link>
               <Nav.Link href="/stop-procrastinating">Stop Procrastinating</Nav.Link>
             </Nav>
