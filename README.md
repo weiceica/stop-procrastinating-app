@@ -2,6 +2,8 @@
 
 Stop Procrastinating is a web application designed to help users manage their tasks and overcome procrastination. The app utilizes Express, Node.js, MongoDB, and React to provide an efficient and user-friendly task management experience. With Stop Procrastinating, users can organize their tasks, set reminders, and stay motivated to complete their work on time.
 
+Hosted on Vercel: https://stopprocrastinating.vercel.app/
+
 ## Features
 
 - **Task Management:** Create, update, and delete tasks with ease. Categorize tasks using labels, prioritize them, and mark them as completed when finished.
