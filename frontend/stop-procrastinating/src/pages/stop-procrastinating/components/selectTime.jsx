@@ -11,39 +11,23 @@ const SelectTime = ({task, onSetTime}) => {
     const min_5 = 300000;
     const min_10 = 6000000;
 
-    const [selected, setSelected] = useState(min_1);
-    const [showAlert, setShowAlert] = useState(false);
+    const [selected, setSelected] = useState();
 
 
 
     const handleSetTime = async (time) =>{
-        try {
-            onSetTime(time);
-            setSelected(time);
-          } catch (err) {
-            console.error(`Error updating todo:`, err);
-            setShowAlert(true);
-          }
+        onSetTime(time);
+        setSelected(time);
     };
 
   return (
-    <>
     <ButtonGroup aria-label="Basic example">
-      <Button variant={selected === secs_1 ? 'danger' : 'secondary'} onClick={() => handleSetTime(secs_1, task)}>1 sec</Button>
-      <Button variant={selected === secs_10 ? 'danger' : 'secondary'} onClick={() => handleSetTime(secs_10, task)}>10 sec</Button>
-      <Button variant={selected === min_1 ? 'danger' : 'secondary'} onClick={() => handleSetTime(min_1, task)}>1 min</Button>
-      <Button variant={selected === min_5 ? 'danger' : 'secondary'} onClick={() => handleSetTime(min_5, task)}>5 min</Button>
-      <Button variant={selected === min_10 ? 'danger' : 'secondary'} onClick={() => handleSetTime(min_10, task)}>10 min</Button>
+      <Button variant={selected === secs_1 ? 'danger' : 'secondary'} onClick={() => handleSetTime(secs_1, task)}  disabled={task === null}>1 sec</Button>
+      <Button variant={selected === secs_10 ? 'danger' : 'secondary'} onClick={() => handleSetTime(secs_10, task)}  disabled={task === null}>10 sec</Button>
+      <Button variant={selected === min_1 ? 'danger' : 'secondary'} onClick={() => handleSetTime(min_1, task)}  disabled={task === null}>1 min</Button>
+      <Button variant={selected === min_5 ? 'danger' : 'secondary'} onClick={() => handleSetTime(min_5, task)}  disabled={task === null}>5 min</Button>
+      <Button variant={selected === min_10 ? 'danger' : 'secondary'} onClick={() => handleSetTime(min_10, task)}  disabled={task === null}>10 min</Button>
     </ButtonGroup>
-    {showAlert && (
-        <Alert variant="danger" onClick={() => setShowAlert(false) } dismissible>
-            <Alert.Heading>Oh snap! You got an error!</Alert.Heading>
-            <p>
-          Select a task and try again.
-            </p>
-        </Alert>
-      )}
-      </>
   )
 }
 
