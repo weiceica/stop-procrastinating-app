@@ -3,5 +3,5 @@ import { defineConfig } from 'vite';
 
 export default defineConfig({
   plugins: [reactRefresh()],
-  root: '/src/index.js'
+  root: './src/index.html'
 });
