@@ -16,13 +16,13 @@ const Yeller = ({task, exitYeller}) => {
   return (
     <div className='yeller-page'>
     <div className='cnt'>
-        {task !== null ? <h1>{task.name}</h1> : <></>}
+        <h1>{task.name}</h1>
         <div className='yeller'>STOP PROCRASTINATING</div> 
     </div>
     <img style={{height:'250px'}} src={dean} alt='flaminyong'/>
     <div className='text'>ur a uncool if u do</div>
     <Button onClick={handleYeller}>
-        click to be a procrastinate
+        Close Alarm
     </Button>
     </div>
   )
