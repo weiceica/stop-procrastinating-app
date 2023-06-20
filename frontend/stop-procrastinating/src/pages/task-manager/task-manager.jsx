@@ -20,7 +20,7 @@ function TaskManager() {
 
   const fetchTodos = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/api/v1/tasks');
+      const response = await axios.get('https://stop-procrastinating-3wtssye19-weiceica.vercel.app/api/v1/tasks');
       console.log(response.data);
       const todos = response.data.event;
       setTodos(todos);
@@ -46,7 +46,7 @@ function TaskManager() {
       return t;
     });
     try {
-      const response = await axios.patch(`http://localhost:3000/api/v1/tasks/${todo._id}`, newTodo);
+      const response = await axios.patch(`https://stop-procrastinating-3wtssye19-weiceica.vercel.app/api/v1/tasks/${todo._id}`, newTodo);
       setTodos(updatedTodos);
     } catch (err) {
       console.error(`Error updating todo:`, err);
@@ -64,7 +64,7 @@ function TaskManager() {
       return t;
     });
     try {
-      const response = await axios.patch(`http://localhost:3000/api/v1/tasks/${todo._id}`, newTodo);
+      const response = await axios.patch(`https://stop-procrastinating-3wtssye19-weiceica.vercel.app/api/v1/tasks/${todo._id}`, newTodo);
       console.log(response.data.event);
       setTodos(updatedTodos);
     } catch (err) {
@@ -85,7 +85,7 @@ function TaskManager() {
       return t;
     });
     try {
-      const response = await axios.patch(`http://localhost:3000/api/v1/tasks/${updatedTodo._id}`, updatedTodo);
+      const response = await axios.patch(`https://stop-procrastinating-3wtssye19-weiceica.vercel.app/api/v1/tasks/${updatedTodo._id}`, updatedTodo);
       console.log(response.data.event);
       setTodos(updatedTodos);
       setSelectedTodo(null);
@@ -97,7 +97,7 @@ function TaskManager() {
 
   const handleDeleteTodo = async (todoId) => {
     try {
-        await axios.delete(`http://localhost:3000/api/v1/tasks/${todoId}`);
+        await axios.delete(`https://stop-procrastinating-3wtssye19-weiceica.vercel.app/api/v1/tasks/${todoId}`);
         console.log('Todo deleted successfully');
     
         // Handle success response as needed
