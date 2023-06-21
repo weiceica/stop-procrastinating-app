@@ -51,7 +51,7 @@ function StopProcrastinating() {
   }
 
   return (
-    <>{status === true ? <Yeller task={task} exitYeller={exitYeller}/> : 
+    <>{status === true ? <Yeller task={task} exitYeller={exitYeller}/> : <></>} 
     <div className='sp-body'>
       <NavigationBar/>
       <div className='sp-page'>
@@ -68,7 +68,6 @@ function StopProcrastinating() {
         </div>
       </div>
     </div>
-    }
     </>
   );
 }
