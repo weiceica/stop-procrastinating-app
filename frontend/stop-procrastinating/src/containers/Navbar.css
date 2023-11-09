@@ -1,11 +1,13 @@
-.navbar{
-    color: 'light-grey'
-}
-
 .navbar-hr {
     border: none;
     height: 1px;
     background-color: #b5b5b5;
     margin-top: 0;
     margin-bottom: 0;
+  }
+
+@media (max-width: 500px){
+    .navbar-container{
+      display: none;
+    }
   }

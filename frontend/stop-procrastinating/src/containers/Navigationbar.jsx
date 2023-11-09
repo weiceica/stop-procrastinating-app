@@ -7,7 +7,7 @@ import Container from 'react-bootstrap/Container';
 const NavigationBar = () => {
   return (
     <>
-    <div>
+    <div className='navbar-container'>
       <Navbar fixed="sticky" sbg="transparent">
           <Container className="d-flex px-1">
             <Navbar.Brand href="/">Stop Procrastinating</Navbar.Brand>

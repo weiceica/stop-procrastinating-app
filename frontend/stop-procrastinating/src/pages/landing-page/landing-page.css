@@ -1,40 +1,36 @@
 
 .landing-page{
   background-color: #F2F1E6;
-  height: 100vh;
+  height: 100%;
+  min-height: 100vh;
 }
 
 .title-section{
-
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 
-  padding-top: 80px;
-  font-size: 40px;
-  letter-spacing: 0px;
-  word-spacing: 6px;
-  color: #29680e;
-  font-weight: 400;
-  text-decoration: none;
-  font-style: normal;
-  font-variant: normal;
-  text-transform: none;
+  padding: 2rem 0;
+  color: #000;
+}
+
+.main-title {
+  font-size: 4rem;
+  font-weight: 700;
 }
 
 .body{
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 
 .section1{
-  margin-top: 50px;
   position: relative;
-  left: 15%;
   background: #c2d6c5;
-  padding: 20px;
-  width: 80vh;
+  padding: 2rem;
+  width: 80%;
   height: auto;
 }
 
@@ -59,12 +55,16 @@
 }
 
 .section2{
-  margin-top: 50px;
+  margin: 4rem 0;
   position: relative;
-  left: 15%;
   background: #c2d6c5;
   padding: 20px;
-  width: 80vh;
+  width: 80%;
   height: auto;
-  margin-bottom: 50px;
+}
+
+@media (max-width: 500px){
+  .main-title{
+    font-size: 2rem;
+  }
 }
